@@ -93,9 +93,15 @@ export default function Home() {
 
       {/* Featured Products */}
       <section className="py-20 bg-white">
-        <h2 className="text-4xl font-bold text-center text-secondary mb-12">
-          Featured Products
-        </h2>
+        <div className="flex justify-between items-center max-w-6xl mx-auto px-6 mb-12">
+          <h2 className="text-4xl font-bold text-secondary">Featured Products</h2>
+          <Link
+            to="/shop"
+            className="text-primary font-semibold hover:underline"
+          >
+            View More
+          </Link>
+        </div>
         <div className="grid gap-10 grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto px-6">
           {[1, 2, 3].map((id) => (
             <div
@@ -121,9 +127,15 @@ export default function Home() {
 
       {/* Best Sellers */}
       <section className="py-20 bg-gray-50">
-        <h2 className="text-4xl font-bold text-center text-secondary mb-12">
-          Best Sellers
-        </h2>
+        <div className="flex justify-between items-center max-w-7xl mx-auto px-6 mb-12">
+          <h2 className="text-4xl font-bold text-secondary">Best Sellers</h2>
+          <Link
+            to="/shop"
+            className="text-primary font-semibold hover:underline"
+          >
+            View More
+          </Link>
+        </div>
         <div className="grid gap-10 grid-cols-1 md:grid-cols-4 max-w-7xl mx-auto px-6">
           {[
             { name: "Ceremonial Matcha", price: "$29.99", img: "https://source.unsplash.com/400x400/?ceremonial,matcha" },

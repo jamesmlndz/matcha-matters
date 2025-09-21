@@ -7,7 +7,7 @@ const products = [
     category: "Powder",
     tagline: "Pure island-grown matcha from Jeju.",
     highlight: "Rich in antioxidants and sustainably grown.",
-    img: "https://source.unsplash.com/400x300/?matcha,green",
+    img: "/assets/products/Jeju.png",
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const products = [
     category: "Powder",
     tagline: "Traditional matcha from Japan’s tea capital.",
     highlight: "Sourced from Uji, Kyoto — home of Japan’s best matcha.",
-    img: "https://source.unsplash.com/400x300/?matcha,japan",
+    img: "/assets/products/Kyoto.png",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const products = [
     category: "Powder",
     tagline: "Over 200 years of Kyoto tea mastery.",
     highlight: "Over 200 years of tea-making expertise.",
-    img: "https://source.unsplash.com/400x300/?matcha,ceremony",
+    img: "/assets/products/Fukujuen.png",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const products = [
     category: "Powder",
     tagline: "Over 200 years of Kyoto tea mastery.",
     highlight: "Over 200 years of tea-making expertise.",
-    img: "https://source.unsplash.com/400x300/?matcha,ceremony",
+    img: "/assets/products/Fukujuen.png",
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const products = [
     category: "Powder",
     tagline: "Award-winning Kyoto matcha excellence.",
     highlight: "High-grade matcha used in traditional Japanese tea schools.",
-    img: "https://source.unsplash.com/400x300/?matcha,tea,ceremony",
+    img: "/assets/products/Yamasa.png",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const products = [
     category: "Powder",
     tagline: "Everyday wellness in every cup.",
     highlight: "Budget-friendly and versatile for everyday use.",
-    img: "https://source.unsplash.com/400x300/?matcha,pouch",
+    img: "/assets/products/Capi.png",
   },
   {
     id: 6,
@@ -61,7 +61,7 @@ const products = [
     category: "Powder",
     tagline: "Fun, vibrant matcha for modern lifestyles.",
     highlight: "Sustainably sourced and USDA organic certified.",
-    img: "https://source.unsplash.com/400x300/?matcha,coffee",
+    img: "/assets/products/Chameberlain.png",
   },
   {
     id: 7,
@@ -70,7 +70,7 @@ const products = [
     category: "Powder",
     tagline: "Fresh, vibrant energy from Japan.",
     highlight: "A balanced choice between quality and affordability.",
-    img: "https://source.unsplash.com/400x300/?matcha,green,tea",
+    img: "/assets/products/Wakatake.png",
   },
   {
     id: 8,
@@ -79,7 +79,7 @@ const products = [
     category: "Powder",
     tagline: "Small-batch matcha perfection.",
     highlight: "100% organic and sourced from Japan’s Nishio region.",
-    img: "https://source.unsplash.com/400x300/?matcha,powder",
+    img: "/assets/products/Aikenka.png",
   },
   {
     id: 9,
@@ -88,7 +88,7 @@ const products = [
     category: "Powder",
     tagline: "Uji’s timeless matcha heritage.",
     highlight: "Traditional stone-ground matcha.",
-    img: "https://source.unsplash.com/400x300/?matcha,japan,green",
+    img: "/assets/products/Yamashiro.png",
   },
   {
     id: 10,
@@ -97,7 +97,7 @@ const products = [
     category: "Powder",
     tagline: "Farm-to-cup organic matcha.",
     highlight: "100% pure organic ceremonial matcha.",
-    img: "https://source.unsplash.com/400x300/?matcha,organic",
+    img: "/assets/products/Encha.png",
   },
   {
     id: 11,
@@ -106,7 +106,7 @@ const products = [
     category: "Powder",
     tagline: "Shining with freshness and flavor.",
     highlight: "Affordable and versatile for multiple uses.",
-    img: "https://source.unsplash.com/400x300/?matcha,fresh",
+    img: "/assets/products/Hikari.png",
   },
   {
     id: 12,
@@ -115,7 +115,7 @@ const products = [
     category: "Powder",
     tagline: "Glow from the inside out.",
     highlight: "Known for its Instagram-worthy packaging and high quality.",
-    img: "https://source.unsplash.com/400x300/?matcha,glow",
+    img: "/assets/products/Golde.png",
   },
   {
     id: 13,
@@ -124,7 +124,7 @@ const products = [
     category: "Powder",
     tagline: "Heritage in every sip.",
     highlight: "Premium ceremonial-grade quality.",
-    img: "https://source.unsplash.com/400x300/?matcha,ceremonial",
+    img: "/assets/products/Isshiki.png",
   },
   {
     id: 14,
@@ -133,7 +133,7 @@ const products = [
     category: "Powder",
     tagline: "Matcha made simple by Dr. Andrew Weil.",
     highlight: "Expertly sourced and stone-ground for maximum flavor.",
-    img: "https://source.unsplash.com/400x300/?matcha,wellness",
+    img: "/assets/products/MatchaCom.png",
   },
   {
     id: 15,
@@ -142,7 +142,7 @@ const products = [
     category: "Powder",
     tagline: "Pure, certified organic excellence.",
     highlight: "Certified organic, pesticide-free cultivation.",
-    img: "https://source.unsplash.com/400x300/?matcha,organic,green",
+    img: "/assets/products/Organic.png",
   },
   // ... add all other products here
 ];

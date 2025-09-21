@@ -39,17 +39,17 @@ export default function Home() {
             {
               title: "Pure Energy",
               text: "Get a calm and sustained boost without the jitters of coffee.",
-              img: "https://source.unsplash.com/200x200/?green,energy",
+              img: "/assets/products/Energy.png",
             },
             {
               title: "Organic & Fresh",
               text: "Sourced from the finest farms in Japan, ensuring quality in every sip.",
-              img: "https://source.unsplash.com/200x200/?matcha,leaves",
+              img: "/assets/products/Leaf.png",
             },
             {
               title: "Mindful Ritual",
               text: "Turn your daily tea into a soothing and mindful experience.",
-              img: "https://source.unsplash.com/200x200/?tea,meditation",
+              img: "/assets/products/Mind.png",
             },
           ].map((item, i) => (
             <div
@@ -119,21 +119,44 @@ export default function Home() {
             View More
           </Link>
         </div>
+
         <div className="grid gap-10 grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto px-6">
-          {[1, 2, 3].map((id) => (
+          {/* Hardcoded products */}
+          {[
+            {
+              id: 1,
+              name: "Jeju Matcha",
+              price: "₱750 – ₱1,200",
+              img: "/assets/products/Jeju.png",
+            },
+            {
+              id: 2,
+              name: "Kyoto Matcha",
+              price: "₱950 – ₱1,500",
+              img: "/assets/products/Kyoto.png",
+            },
+            {
+              id: 3,
+              name: "Fukujuen Matcha",
+              price: "₱1,200 – ₱1,800",
+              img: "/assets/products/Fukujuen.png",
+            },
+          ].map((product) => (
             <div
-              key={id}
+              key={product.id}
               className="bg-gray-50 rounded-xl shadow hover:shadow-lg transition p-6 text-center border border-gray-100"
             >
-              <img
-                src={`https://source.unsplash.com/300x200/?matcha,tea,${id}`}
-                alt="Matcha Product"
-                className="w-full h-40 object-cover rounded-md mb-4"
-              />
+              <div className="w-full aspect-square mb-4">
+                <img
+                  src={product.img}
+                  alt={product.name}
+                  className="w-full h-full object-cover rounded-md"
+                />
+              </div>
               <h3 className="text-lg font-semibold text-secondary">
-                Premium Matcha {id}
+                {product.name}
               </h3>
-              <p className="text-accent mt-2">$19.99</p>
+              <p className="text-accent mt-2">{product.price}</p>
               <button className="mt-4 px-6 py-2 bg-primary text-secondary font-semibold rounded-full hover:bg-secondary hover:text-white transition">
                 Add to Cart
               </button>
@@ -142,44 +165,71 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* Best Sellers */}
-      <section className="py-20 bg-gray-50">
-        <div className="flex justify-between items-center max-w-7xl mx-auto px-6 mb-12">
-          <h2 className="text-4xl font-bold text-secondary">Best Sellers</h2>
-          <Link
-            to="/shop"
-            className="text-primary font-semibold hover:underline"
-          >
-            View More
-          </Link>
-        </div>
-        <div className="grid gap-10 grid-cols-1 md:grid-cols-4 max-w-7xl mx-auto px-6">
-          {[
-            { name: "Ceremonial Matcha", price: "$29.99", img: "https://source.unsplash.com/400x400/?ceremonial,matcha" },
-            { name: "Matcha Starter Kit", price: "$49.99", img: "https://source.unsplash.com/400x400/?matcha,kit" },
-            { name: "Bamboo Whisk", price: "$12.99", img: "https://source.unsplash.com/400x400/?bamboo,whisk" },
-            { name: "Iced Matcha Blend", price: "$24.99", img: "https://source.unsplash.com/400x400/?iced,matcha" },
-          ].map((prod, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center border border-gray-100"
+      <section
+        className="py-20 bg-cover bg-center relative"
+        style={{ backgroundImage: "url('/assets/products/BestSeller.png')" }} // ✅ your background image
+      >
+        {/* Overlay for better readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        <div className="relative z-10">
+          <div className="flex justify-between items-center max-w-7xl mx-auto px-6 mb-12">
+            <h2 className="text-4xl font-bold text-white">Best Sellers</h2>
+            <Link
+              to="/shop"
+              className="text-[#F7DF52] font-semibold hover:underline"
             >
-              <img
-                src={prod.img}
-                alt={prod.name}
-                className="w-full h-48 object-cover rounded-md mb-4"
-              />
-              <h3 className="text-lg font-semibold text-secondary">
-                {prod.name}
-              </h3>
-              <p className="text-accent mt-2">{prod.price}</p>
-              <button className="mt-4 px-6 py-2 bg-primary text-secondary font-semibold rounded-full hover:bg-secondary hover:text-white transition">
-                Add to Cart
-              </button>
-            </div>
-          ))}
+              View More
+            </Link>
+          </div>
+
+          <div className="grid gap-10 grid-cols-1 md:grid-cols-4 max-w-7xl mx-auto px-6">
+            {[
+              {
+                name: "Ceremonial Matcha",
+                price: "$29.99",
+                img: "https://source.unsplash.com/400x400/?ceremonial,matcha",
+              },
+              {
+                name: "Matcha Starter Kit",
+                price: "$49.99",
+                img: "https://source.unsplash.com/400x400/?matcha,kit",
+              },
+              {
+                name: "Bamboo Whisk",
+                price: "$12.99",
+                img: "https://source.unsplash.com/400x400/?bamboo,whisk",
+              },
+              {
+                name: "Iced Matcha Blend",
+                price: "$24.99",
+                img: "https://source.unsplash.com/400x400/?iced,matcha",
+              },
+            ].map((prod, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center border border-gray-100"
+              >
+                <img
+                  src={prod.img}
+                  alt={prod.name}
+                  className="w-full h-48 object-cover rounded-md mb-4"
+                />
+                <h3 className="text-lg font-semibold text-secondary">
+                  {prod.name}
+                </h3>
+                <p className="text-accent mt-2">{prod.price}</p>
+                <button className="mt-4 px-6 py-2 bg-primary text-secondary font-semibold rounded-full hover:bg-secondary hover:text-white transition">
+                  Add to Cart
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
+
 
       {/* Testimonials */}
       <section className="py-20 bg-gray-50">

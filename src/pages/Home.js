@@ -1,26 +1,33 @@
 import { Link } from "react-router-dom";
 
+
 export default function Home() {
   return (
     <div className="font-poppins">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-secondary to-accent py-24 text-center text-white relative">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-            Elevate Your Rituals with Premium Matcha
-          </h1>
-          <p className="text-lg md:text-xl mb-8">
-            Handpicked, organic, and full of wellness benefits. Discover the
-            essence of matcha, crafted for energy, focus, and balance.
-          </p>
-          <Link
-            to="/shop"
-            className="inline-block px-8 py-4 bg-primary text-secondary font-bold rounded-full shadow-md hover:bg-yellow-400 transition"
-          >
-            Shop Now
-          </Link>
-        </div>
-      </section>
+     <section
+      className="relative py-24 text-center text-white bg-cover bg-center"
+      style={{ backgroundImage: "url('/assets/backgrounds/HeroBg.png')" }}
+      >
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div> {/* Dark overlay for readability */}
+
+      <div className="relative max-w-3xl mx-auto z-10">
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+          Elevate Your Rituals with Premium Matcha
+        </h1>
+        <p className="text-lg md:text-xl mb-8">
+          Handpicked, organic, and full of wellness benefits. Discover the
+          essence of matcha, crafted for energy, focus, and balance.
+        </p>
+        <Link
+          to="/shop"
+          className="inline-block px-8 py-4 bg-primary text-secondary font-bold rounded-full shadow-md hover:bg-yellow-400 transition"
+        >
+          Shop Now
+    </Link>
+  </div>
+</section>
+
+
 
       {/* Why Matcha */}
       <section className="py-20 bg-white text-center">
@@ -64,32 +71,42 @@ export default function Home() {
       </section>
 
       {/* Shop by Category */}
-      <section className="py-20 bg-gray-50">
-        <h2 className="text-4xl font-bold text-center text-secondary mb-12">
-          Shop by Category
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-          {[
-            { name: "Pure Matcha", img: "https://source.unsplash.com/400x300/?matcha" },
-            { name: "Tea Sets", img: "https://source.unsplash.com/400x300/?tea,set" },
-            { name: "Accessories", img: "https://source.unsplash.com/400x300/?tea,whisk" },
-          ].map((cat, i) => (
-            <div
-              key={i}
-              className="relative group rounded-xl overflow-hidden shadow-lg"
-            >
-              <img
-                src={cat.img}
-                alt={cat.name}
-                className="w-full h-60 object-cover group-hover:scale-105 transition duration-500"
-              />
-              <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                <span className="text-white text-2xl font-bold">{cat.name}</span>
+      <section
+        className="py-20 bg-cover bg-center relative"
+        style={{ backgroundImage: "url('/assets/backgrounds/MatchaBg.jpg')" }} // ✅ section background
+      >
+        {/* Optional overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+
+        <div className="relative z-10">
+          <h2 className="text-4xl font-bold text-center text-white mb-12">
+            Shop by Category
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
+            {[
+              { name: "Pure Matcha", img: "/assets/products/Ceremonial.jpeg" },
+              { name: "Tea Sets", img: "/assets/products/TeaSets.png" },
+              { name: "Accessories", img: "/assets/products/Accessories.jpeg" },
+            ].map((cat, i) => (
+              <div
+                key={i}
+                className="relative group rounded-xl overflow-hidden shadow-lg"
+              >
+                <img
+                  src={cat.img}
+                  alt={cat.name}
+                  className="w-full h-60 object-cover group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                  <span className="text-white text-2xl font-bold">{cat.name}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
+
+
 
       {/* Featured Products */}
       <section className="py-20 bg-white">

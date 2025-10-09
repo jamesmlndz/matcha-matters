@@ -1,35 +1,42 @@
 import { Link } from "react-router-dom";
 
-
 export default function Home() {
   return (
     <div className="font-poppins">
-     <section
-      className="relative py-24 text-center text-white bg-cover bg-center"
-      style={{ backgroundImage: "url('/assets/backgrounds/HeroBg.png')" }}
-      >
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div> {/* Dark overlay for readability */}
+      {/* 🌿 HERO SECTION WITH VIDEO */}
+      <section className="relative py-24 text-center text-white overflow-hidden">
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/assets/videos/MatchaCommercial.mp4" // ✅ path from public folder
+          autoPlay
+          loop
+          muted
+          playsInline
+        ></video>
 
-      <div className="relative max-w-3xl mx-auto z-10">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-          Elevate Your Rituals with Premium Matcha
-        </h1>
-        <p className="text-lg md:text-xl mb-8">
-          Handpicked, organic, and full of wellness benefits. Discover the
-          essence of matcha, crafted for energy, focus, and balance.
-        </p>
-        <Link
-          to="/shop"
-          className="inline-block px-8 py-4 bg-primary text-secondary font-bold rounded-full shadow-md hover:bg-yellow-400 transition"
-        >
-          Shop Now
-    </Link>
-  </div>
-</section>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
+        {/* Hero Content */}
+        <div className="relative max-w-3xl mx-auto z-10">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+            Elevate Your Rituals with Premium Matcha
+          </h1>
+          <p className="text-lg md:text-xl mb-8">
+            Handpicked, organic, and full of wellness benefits. Discover the
+            essence of matcha, crafted for energy, focus, and balance.
+          </p>
+          <Link
+            to="/shop"
+            className="inline-block px-8 py-4 bg-primary text-secondary font-bold rounded-full shadow-md hover:bg-yellow-400 transition"
+          >
+            Shop Now
+          </Link>
+        </div>
+      </section>
 
-
-      {/* Why Matcha */}
+      {/* 🌱 Why Matcha Section */}
       <section className="py-20 bg-white text-center">
         <h2 className="text-4xl font-bold text-secondary mb-12">
           Why Choose Matcha Matters?
@@ -70,14 +77,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Shop by Category */}
+      {/* 🍵 Shop by Category */}
       <section
         className="py-20 bg-cover bg-center relative"
-        style={{ backgroundImage: "url('/assets/backgrounds/MatchaBg.jpg')" }} // ✅ section background
+        style={{ backgroundImage: "url('/assets/backgrounds/MatchaBg.jpg')" }}
       >
-        {/* Optional overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-
         <div className="relative z-10">
           <h2 className="text-4xl font-bold text-center text-white mb-12">
             Shop by Category
@@ -98,7 +103,9 @@ export default function Home() {
                   className="w-full h-60 object-cover group-hover:scale-105 transition duration-500"
                 />
                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                  <span className="text-white text-2xl font-bold">{cat.name}</span>
+                  <span className="text-white text-2xl font-bold">
+                    {cat.name}
+                  </span>
                 </div>
               </div>
             ))}
@@ -106,22 +113,18 @@ export default function Home() {
         </div>
       </section>
 
-
-
-      {/* Featured Products */}
+      {/* 🌿 Featured Products */}
       <section className="py-20 bg-white">
         <div className="flex justify-between items-center max-w-6xl mx-auto px-6 mb-12">
-          <h2 className="text-4xl font-bold text-secondary">Featured Products</h2>
-          <Link
-            to="/shop"
-            className="text-primary font-semibold hover:underline"
-          >
+          <h2 className="text-4xl font-bold text-secondary">
+            Featured Products
+          </h2>
+          <Link to="/shop" className="text-primary font-semibold hover:underline">
             View More
           </Link>
         </div>
 
         <div className="grid gap-10 grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto px-6">
-          {/* Hardcoded products */}
           {[
             {
               id: 1,
@@ -165,15 +168,12 @@ export default function Home() {
         </div>
       </section>
 
-
-      {/* Best Sellers */}
+      {/* 🏆 Best Sellers */}
       <section
         className="py-20 bg-cover bg-center relative"
-        style={{ backgroundImage: "url('/assets/products/BestSeller.png')" }} // ✅ your background image
+        style={{ backgroundImage: "url('/assets/products/BestSeller.png')" }}
       >
-        {/* Overlay for better readability */}
         <div className="absolute inset-0 bg-black/40"></div>
-
         <div className="relative z-10">
           <div className="flex justify-between items-center max-w-7xl mx-auto px-6 mb-12">
             <h2 className="text-4xl font-bold text-white">Best Sellers</h2>
@@ -230,8 +230,7 @@ export default function Home() {
         </div>
       </section>
 
-
-      {/* Testimonials */}
+      {/* 💬 Testimonials */}
       <section className="py-20 bg-gray-50">
         <h2 className="text-4xl font-bold text-center text-secondary mb-12">
           What Our Customers Say
@@ -262,7 +261,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Newsletter */}
+      {/* ✉️ Newsletter */}
       <section className="py-20 bg-secondary text-white text-center">
         <h2 className="text-4xl font-bold mb-6">Stay Connected</h2>
         <p className="mb-8 text-lg">

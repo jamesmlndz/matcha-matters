@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
+import { FaBars, FaTimes, FaShoppingCart, FaUser } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const menuItems = ["Home", "Shop", "About", "Contact"]; // Removed Cart
+  const menuItems = ["Home", "Shop", "About", "Contact"];
 
   return (
     <nav className="bg-[#3C75B5] text-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="text-2xl font-extrabold tracking-wide text-[#F7DF52]">
-          <Link to="/">Matcha Matters</Link>
+          <Link to="/home">Matcha Matters</Link>
         </div>
 
         {/* Desktop Menu */}
@@ -21,7 +21,7 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <li key={item}>
                 <Link
-                  to={`/${item === "Home" ? "" : item.toLowerCase()}`}
+                  to={`/${item === "Home" ? "home" : item.toLowerCase()}`}
                   className="relative group"
                 >
                   {item}
@@ -31,19 +31,30 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* Cart Icon */}
-          <Link
-            to="/cart"
-            className="ml-6 text-white hover:text-[#F7DF52] transition text-2xl"
-          >
-            <FaShoppingCart />
-          </Link>
+          {/* Icons */}
+          <div className="flex items-center gap-5 ml-6">
+            <Link
+              to="/cart"
+              className="text-white hover:text-[#F7DF52] transition text-2xl"
+            >
+              <FaShoppingCart />
+            </Link>
+            <Link
+              to="/profile"
+              className="text-white hover:text-[#F7DF52] transition text-2xl"
+            >
+              <FaUser />
+            </Link>
+          </div>
         </div>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile Hamburger + Icons */}
         <div className="md:hidden flex items-center gap-4">
           <Link to="/cart" className="text-white text-2xl">
             <FaShoppingCart />
+          </Link>
+          <Link to="/login" className="text-white text-2xl">
+            <FaUser />
           </Link>
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -58,7 +69,7 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <li key={item}>
                 <Link
-                  to={`/${item === "Home" ? "" : item.toLowerCase()}`}
+                  to={`/${item === "Home" ? "home" : item.toLowerCase()}`}
                   className="block hover:text-[#F7DF52] transition"
                   onClick={() => setIsOpen(false)}
                 >

@@ -31,7 +31,7 @@ export default function Login() {
         className="hidden md:flex md:w-1/2 items-center justify-center"
       >
         <img
-          src="/assets/backgrounds/MatchaMatters.png"
+          src="/assets/logo/Matters.png"
           alt="Matcha Matters"
           className="w-3/4 h-auto object-contain drop-shadow-2xl rounded-xl"
         />
@@ -53,28 +53,28 @@ export default function Login() {
             ease: [0.25, 0.8, 0.25, 1],
             delay: 0.8,
           }}
-          className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 border border-gray-200 flex flex-col items-center relative"
+          className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-10 border border-gray-200 flex flex-col items-center relative"
         >
-          {/* 🖼️ Logo */}
+          {/* 🖼️ Bigger Logo */}
           <motion.img
-            src="/assets/backgrounds/MatchaMatters.png"
+            src="/assets/logo/text.png"
             alt="Matcha Matters Logo"
             initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
+            animate={{ scale: 1.3, opacity: 1 }} // bigger logo
             transition={{ duration: 0.8, delay: 1 }}
-            className="w-70 h-auto mb-1 -mt-10 drop-shadow-md"
+            className="-mt-16 w-80 h-auto drop-shadow-md" // closer to form
           />
 
           {/* 🪄 Login Form */}
           <motion.form
             onSubmit={handleSubmit}
-            className="space-y-4 w-full"
+            className="space-y-6 w-full"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.4, duration: 0.8 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
           >
             <div>
-              <label className="block text-secondary mb-1 text-sm">Email</label>
+              <label className="block text-secondary mb-2 text-base">Email</label>
               <input
                 type="email"
                 name="email"
@@ -82,12 +82,12 @@ export default function Login() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-secondary text-sm"
+                className="w-full px-6 py-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-secondary text-base"
               />
             </div>
 
             <div>
-              <label className="block text-secondary mb-1 text-sm">Password</label>
+              <label className="block text-secondary mb-2 text-base">Password</label>
               <input
                 type="password"
                 name="password"
@@ -95,7 +95,7 @@ export default function Login() {
                 value={formData.password}
                 onChange={handleChange}
                 required
-                className="w-full px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-secondary text-sm"
+                className="w-full px-6 py-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-secondary text-base"
               />
             </div>
 
@@ -103,7 +103,7 @@ export default function Login() {
               type="submit"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full bg-secondary text-white py-3 rounded-full font-semibold shadow-md hover:bg-accent transition text-sm"
+              className="w-full bg-secondary text-white py-4 rounded-full font-semibold shadow-md hover:bg-accent transition text-base"
             >
               Log In
             </motion.button>
@@ -113,8 +113,8 @@ export default function Login() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 2, duration: 0.6 }}
-            className="text-center mt-4 text-gray-600 text-sm"
+            transition={{ delay: 1.8, duration: 0.6 }}
+            className="text-center mt-4 text-gray-600 text-base"
           >
             Don’t have an account?{" "}
             <Link

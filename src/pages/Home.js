@@ -36,46 +36,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 🌱 Why Matcha Section */}
-      <section className="py-20 bg-white text-center">
-        <h2 className="text-4xl font-bold text-secondary mb-12">
-          Why Choose Matcha Matters?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
-          {[
-            {
-              title: "Pure Energy",
-              text: "Get a calm and sustained boost without the jitters of coffee.",
-              img: "/assets/products/Energy.png",
-            },
-            {
-              title: "Organic & Fresh",
-              text: "Sourced from the finest farms in Japan, ensuring quality in every sip.",
-              img: "/assets/products/Leaf.png",
-            },
-            {
-              title: "Mindful Ritual",
-              text: "Turn your daily tea into a soothing and mindful experience.",
-              img: "/assets/products/Mind.png",
-            },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="bg-gray-50 p-8 rounded-xl shadow hover:shadow-lg transition"
-            >
-              <img
-                src={item.img}
-                alt={item.title}
-                className="w-20 h-20 mx-auto mb-6 rounded-full object-cover"
-              />
-              <h3 className="text-xl font-semibold text-secondary mb-3">
-                {item.title}
-              </h3>
-              <p className="text-gray-600">{item.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+   {/* 🌱 Why Matcha Section */}
+<section className="py-20 bg-white">
+  <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+    {/* Left Side - Logo/Image */}
+    <div className="md:w-1/2 flex justify-center md:justify-start">
+      <img
+        src="/assets/logo/Text.png"
+        alt="Matcha Matters Logo"
+        className="w-70 h-auto object-contain"
+      />
+    </div>
+
+    {/* Right Side - Text */}
+    <div className="md:w-1/2 text-center md:text-left">
+      <h2 className="text-4xl font-bold text-secondary mb-6">
+        Why Choose Matcha Matters?
+      </h2>
+      <p className="text-gray-700 mb-4">
+        At Matcha Matters, we provide the highest quality ceremonial matcha to
+        elevate your daily rituals. Enjoy the perfect balance of flavor, energy,
+        and mindfulness.
+      </p>
+      <p className="text-gray-700 mb-4">
+        
+      </p>
+      <p className="text-gray-700">
+        Embrace a mindful tea experience and transform your everyday moments
+        into calming rituals with Matcha Matters.
+      </p>
+    </div>
+  </div>
+</section>
+
 
       {/* 🍵 Shop by Category */}
       <section

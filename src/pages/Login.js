@@ -57,7 +57,7 @@ export default function Login() {
         >
           {/* 🖼️ Bigger Logo */}
           <motion.img
-            src="/assets/logo/text.png"
+            src="/assets/logo/Matters.png"
             alt="Matcha Matters Logo"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1.3, opacity: 1 }} // bigger logo

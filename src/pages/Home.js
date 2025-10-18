@@ -25,7 +25,7 @@ export default function Home() {
           </h1>
           <p className="text-lg md:text-xl mb-8">
              Discover the
-            essence of matcha with Macha Matters
+            essence of matcha with Matcha Matters
           </p>
           <Link
             to="/shop"

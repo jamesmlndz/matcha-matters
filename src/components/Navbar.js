@@ -27,7 +27,7 @@ const Navbar = () => {
             to="/home"
             className={isHome ? "text-[#F7DF52]" : "text-[#3373BA]"}
           >
-            Macha Matters
+            Matcha Matters
           </Link>
         </div>
 

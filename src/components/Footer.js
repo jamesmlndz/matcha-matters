@@ -9,7 +9,7 @@ const Footer = () => {
         
         {/* Brand */}
         <div>
-          <h2 className="text-2xl font-bold text-[#F7DF52]">Matcha Matters</h2>
+          <h2 className="text-2xl font-bold text-[#F7DF52]">Macha Matters</h2>
           <p className="mt-3 text-sm text-gray-200">
             Bringing the finest matcha directly to your cup. Fresh, organic, and full of energy.
           </p>
@@ -56,7 +56,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-400 mt-8 pt-4 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-6">
-        <p className="text-sm text-gray-200">© {new Date().getFullYear()} Matcha Matters. All rights reserved.</p>
+        <p className="text-sm text-gray-200">© {new Date().getFullYear()} Macha Matters. All rights reserved.</p>
         
         <div className="flex space-x-5 mt-3 md:mt-0">
           <a href="#" className="hover:text-[#F7DF52]"><FaFacebookF /></a>

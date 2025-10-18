@@ -21,11 +21,11 @@ export default function Home() {
         {/* Hero Content */}
         <div className="relative max-w-3xl mx-auto z-10">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-            Elevate Your Rituals with Premium Matcha
+            Whisk.Sip.Enjoy
           </h1>
           <p className="text-lg md:text-xl mb-8">
-            Handpicked, organic, and full of wellness benefits. Discover the
-            essence of matcha, crafted for energy, focus, and balance.
+             Discover the
+            essence of matcha with Macha Matters
           </p>
           <Link
             to="/shop"
@@ -36,38 +36,56 @@ export default function Home() {
         </div>
         </section>
 
-        {/* 🌱 Why Matcha Section */}
-      <section className="py-5 bg-white">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-          {/* Left Side - Logo/Image */}
-          <div className="md:w-1/2 flex justify-center md:justify-start">
-            <img
-              src="/assets/logo/Text.png"
-              alt="Matcha Matters Logo"
-              className="w-70 h-auto object-contain"
-            />
-          </div>
+            {/* 🌱 Why Matcha Section */}
+        <section className="py-5 bg-white">
+          <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            {/* Left Side - Logo/Image */}
+            <div className="md:w-1/2 flex justify-center md:justify-start">
+              <img
+                src="/assets/logo/Text.png"
+                alt="Matcha Matters Logo"
+                className="w-70 h-auto object-contain"
+              />
+            </div>
 
-          {/* Right Side - Text */}
-          <div className="md:w-1/2 text-center md:text-left">
-            <h2 className="text-4xl font-bold text-secondary mb-6">
-              Why Choose Macha Matters?
-            </h2>
-            <p className="text-gray-700 mb-4">
-              At Macha Matters, we provide the highest quality ceremonial matcha to
-              elevate your daily rituals. Enjoy the perfect balance of flavor, energy,
-              and mindfulness.
-            </p>
-            <p className="text-gray-700 mb-4">
-              
-            </p>
-            <p className="text-gray-700">
-              Embrace a mindful tea experience and transform your everyday moments
-              into calming rituals with Matcha Matters.
-            </p>
+            {/* Right Side - Text */}
+            <div className="md:w-1/2 text-center md:text-left">
+              <h2 className="text-4xl font-bold text-secondary mb-6">
+                Why Choose Matcha Matters?
+              </h2>
+              <p className="text-gray-700 mb-4">
+                At Matcha Matters, we provide the highest quality ceremonial matcha to
+                elevate your daily rituals. Enjoy the perfect balance of flavor, energy,
+                and mindfulness.
+              </p>
+              <p className="text-gray-700 mb-4">
+                Embrace a mindful tea experience and transform your everyday moments
+                with Matcha Matters.
+              </p>
+
+              {/* Instagram Button */}
+              <div className="mt-6 flex justify-center md:justify-start">
+                <a
+                  href="https://www.instagram.com/machamatters?igsh=NGNpNXU4MXl3YmFv&utm_source=qr"  // 🔗 Replace with your Instagram link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-5 py-2 bg-[#3373BA] hover:bg-[#F7DF52] text-white font-medium rounded-full transition-all duration-300 shadow-md"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5"
+                  >
+                    <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm4.25 3.75a5.75 5.75 0 1 1 0 11.5a5.75 5.75 0 0 1 0-11.5Zm0 1.5a4.25 4.25 0 1 0 0 8.5a4.25 4.25 0 0 0 0-8.5Zm5.5-.75a1 1 0 1 1 0 2a1 1 0 0 1 0-2Z" />
+                  </svg>
+                  Follow Us on Instagram
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
 
       {/* Advertisement section */}
       <section className="py-20 bg-white">

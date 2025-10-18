@@ -51,10 +51,10 @@ export default function Home() {
           {/* Right Side - Text */}
           <div className="md:w-1/2 text-center md:text-left">
             <h2 className="text-4xl font-bold text-secondary mb-6">
-              Why Choose Matcha Matters?
+              Why Choose Macha Matters?
             </h2>
             <p className="text-gray-700 mb-4">
-              At Matcha Matters, we provide the highest quality ceremonial matcha to
+              At Macha Matters, we provide the highest quality ceremonial matcha to
               elevate your daily rituals. Enjoy the perfect balance of flavor, energy,
               and mindfulness.
             </p>
@@ -143,6 +143,60 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+          <section className="bg-white py-10 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        
+        {/* LEFT SIDE — Image Arrangement */}
+        <div className="flex flex-col items-center gap-4">
+          {/* Top image row */}
+          <div className="flex justify-center gap-4">
+            <img
+              src="/assets/logo/MatchaAcc.png"
+              alt="Matcha Cup"
+              className="w-full max-w-md md:max-w-lg rounded-xl shadow-sm object-contain"
+            />
+
+            
+          </div>
+
+        </div>
+
+        {/* RIGHT SIDE — Text */}
+        <div className="flex flex-col gap-6">
+          <p className="text-[#1E1E1E] text-lg md:text-xl leading-relaxed font-medium max-w-md">
+            selling a wide variety of matcha powders and matcha-making equipment
+            sourced from premium brands around the globe.
+          </p>
+
+          {/* Shapes (decorative) */}
+          <div className="flex gap-5 items-center">
+          {/* Curve image */}
+          <div className="w-27 h-27 flex items-center justify-center">
+            <img
+              src="/assets/icons/Curve.png"
+              alt="Star"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          {/* Star image */}
+          <div className="w-27 h-27 flex items-center justify-center">
+            <img
+              src="/assets/icons/Star.png"
+              alt="Star"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+
+          
+        </div>
+
+        </div>
+      </div>
+    </section>
+
 
       {/* 🌿 Featured Products */}
       <section className="py-20 bg-white">
@@ -308,22 +362,22 @@ export default function Home() {
               {
                 name: "Ceremonial Matcha",
                 price: "$29.99",
-                img: "https://source.unsplash.com/400x400/?ceremonial,matcha",
+                img: "/assets/products/Chameberlain.png",
               },
               {
                 name: "Matcha Starter Kit",
                 price: "$49.99",
-                img: "https://source.unsplash.com/400x400/?matcha,kit",
+                img: "/assets/logo/MatchaAcc.png",
               },
               {
                 name: "Bamboo Whisk",
                 price: "$12.99",
-                img: "https://source.unsplash.com/400x400/?bamboo,whisk",
+                img: "/assets/Kits/Whisk.png",
               },
               {
                 name: "Iced Matcha Blend",
                 price: "$24.99",
-                img: "https://source.unsplash.com/400x400/?iced,matcha",
+                img: "/assets/icons/matcha-glass.png",
               },
             ].map((prod, i) => (
               <div
@@ -349,45 +403,96 @@ export default function Home() {
       </section>
 
       <section className="relative flex flex-col md:flex-row items-center justify-center bg-white py-16 px-8">
-  {/* Yellow Rounded Box */}
-  <div className="relative bg-[#F7DF52] rounded-3xl border-4 border-black p-8 max-w-4xl shadow-lg flex items-center gap-8">
-  {/* Matcha Glass Image (Left) */}
-  <div className="flex-shrink-0">
-    <img
-      src="/assets/icons/matcha-glass.png" // replace with your actual image
-      alt="Matcha Latte"
-      className="w-60 h-60 rounded-2xl object-cover"
-    />
-  </div>
+        {/* Yellow Rounded Box */}
+        <div className="relative bg-[#F7DF52] rounded-3xl border-4 border-black p-8 max-w-4xl shadow-lg flex items-center gap-8">
+        {/* Matcha Glass Image (Left) */}
+        <div className="flex-shrink-0">
+          <img
+            src="/assets/icons/matcha-glass.png" // replace with your actual image
+            alt="Matcha Latte"
+            className="w-60 h-60 rounded-2xl object-cover"
+          />
+        </div>
 
-  {/* Text Content (Right) */}
-  <div className="flex flex-col text-left">
-    <h2 className="text-2xl md:text-4xl font-bold text-[#245A2D] mb-3">
-      Matcha Latte
-    </h2>
-    <p className="text-lg md:text-2xl text-black leading-relaxed">
-      Experience the smooth blend of premium Japanese matcha and creamy milk  
-      the perfect way to energize your day.
-    </p>
-  </div>
-</div>
+        {/* Text Content (Right) */}
+        <div className="flex flex-col text-left">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#245A2D] mb-3">
+            Matcha Latte
+          </h2>
+          <p className="text-lg md:text-2xl text-black leading-relaxed">
+            Experience the smooth blend of premium Japanese matcha and creamy milk  
+            the perfect way to energize your day.
+          </p>
+        </div>
+      </div>
 
-  {/* Blue Circle and Hand Image */}
-  <div className="relative mt-12 md:mt-0 md:ml-[-80px] flex items-center justify-center top-50">
-    {/* Japanese Text */}
-  <h3 className="absolute left-50 right-50 bottom-60 text-5xl font-bold text-[#D64541]">
-    オツミルク
-  </h3>
-    <div className="w-64 h-64 bg-[#2967B0] rounded-full relative z-0 top-20 bottom-50"></div>
-    <img
-      src="/assets/icons/whiskingmmatcha.png" // replace with your own
-      alt="Whisking Matcha"
-      className="absolute w-72 h-72 object-contain z-10 right-0 bottom-30"
-    />
-  </div>
+        {/* Blue Circle and Hand Image */}
+        <div className="relative mt-12 md:mt-0 md:ml-[-80px] flex items-center justify-center top-50">
+          {/* Japanese Text */}
+        <h3 className="absolute left-50 right-50 bottom-60 text-5xl font-bold text-[#D64541]">
+          オツミルク
+        </h3>
+          <div className="w-64 h-64 bg-[#2967B0] rounded-full relative z-0 top-20 bottom-50"></div>
+          <img
+            src="/assets/icons/whiskingmmatcha.png" // replace with your own
+            alt="Whisking Matcha"
+            className="absolute w-72 h-72 object-contain z-10 right-0 bottom-30"
+          />
+        </div>
 
-  
-</section>
+        
+      </section>
+
+      <section className="bg-[#F7DF52] py-20 px-6 md:px-20">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-16">
+        {/* LEFT: Product Images */}
+        <div className="flex gap-6 md:gap-8">
+          <div className="flex flex-col gap-6">
+            <img
+              src="/assets/Kits/Whisk.png"
+              alt="Matcha Whisk"
+              className="w-36 md:w-44 object-contain drop-shadow-lg"
+            />
+            <img
+              src="/assets/Kits/Strain.png"
+              alt="Matcha Strainer"
+              className="w-36 md:w-44 object-contain drop-shadow-lg"
+            />
+          </div>
+          <div className="flex flex-col gap-6">
+            <img
+              src="/assets/Kits/Package.png"
+              alt="Matcha Starter Package"
+              className="w-36 md:w-44 object-contain drop-shadow-lg"
+            />
+            <img
+              src="/assets/Kits/Scoop.png"
+              alt="Matcha Scoop"
+              className="w-36 md:w-44 object-contain drop-shadow-lg"
+            />
+          </div>
+        </div>
+
+        {/* RIGHT: Text + Button */}
+        <div className="text-center md:text-left max-w-sm">
+          <h2 className="text-4xl font-extrabold text-[#2A6EEA] mb-3 tracking-tight">
+            Starter Kits
+          </h2>
+          <p className="text-gray-800 text-lg leading-relaxed mb-8">
+            Our curated starter kits are perfect for beginners and matcha lovers.
+            Each set includes premium tools handpicked from authentic matcha
+            makers around the world.
+          </p>
+
+          <Link
+            to="/shop"
+            className="bg-[#2A6EEA] text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-[#1F56B3] transition-all duration-300"
+          >
+            Shop 
+          </Link>
+        </div>
+      </div>
+    </section>
 
 
 

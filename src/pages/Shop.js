@@ -23,7 +23,7 @@ const Shop = () => {
 
       {/* Filters */}
       <div className="flex justify-center space-x-4 mb-10">
-        {["All", "Powder", "Kit", "Drinks", "Accessories"].map((cat) => (
+        {["All", "Powder", "Kit",  "Accessories"].map((cat) => (
           <button
             key={cat}
             onClick={() => setCategory(cat)}

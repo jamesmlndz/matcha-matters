@@ -11,6 +11,8 @@ import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/profile";
+import Checkout from "./pages/Checkout";
+import OrderSuccess from "./pages/OrderSuccess";
 
 // ✅ Wrapper component to conditionally render Navbar/Footer
 function Layout() {
@@ -40,6 +42,8 @@ function Layout() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/order-success" element={<OrderSuccess/>} />
         </Routes>
       </main>
 

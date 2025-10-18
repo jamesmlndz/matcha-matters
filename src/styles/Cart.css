@@ -1,0 +1,131 @@
+.cart-container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 25px;
+    background: linear-gradient(145deg, #e8f0ff, #ffffff);
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins-Black", sans-serif;
+    animation: fadeIn 0.4s ease-in;
+  }
+  
+  .cart-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 25px;
+    font-weight: 600;
+  }
+  
+  .cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f5f8ff;
+    padding: 15px;
+    border-radius: 18px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .cart-item:hover {
+    transform: scale(1.02);
+    background: #e9f1ff;
+  }
+  
+  .cart-item-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-item-details {
+    flex: 1;
+    margin-left: 15px;
+  }
+  
+  .cart-item-details h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #002b5b;
+  }
+  
+  .cart-item-details p {
+    font-size: 1rem;
+    color: #004080;
+    margin-top: 4px;
+  }
+  
+  .remove-btn {
+    background: linear-gradient(135deg, #ff4d4f, #e63946);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  
+  .remove-btn:hover {
+    background: linear-gradient(135deg, #ff6668, #ff4d4f);
+    transform: scale(1.05);
+  }
+  
+  .cart-summary {
+    text-align: center;
+    margin-top: 35px;
+  }
+  
+  .cart-summary h2 {
+    font-size: 1.5rem;
+    color: #002b5b;
+    margin-bottom: 20px;
+  }
+  
+  .clear-btn {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  
+  .clear-btn:hover {
+    background: linear-gradient(135deg, #3399ff, #0066cc);
+    transform: scale(1.05);
+  }
+  
+  .empty-cart {
+    text-align: center;
+    color: #555;
+    font-size: 1.2rem;
+    background: #f0f5ff;
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

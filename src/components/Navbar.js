@@ -1,28 +1,44 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaShoppingCart, FaUser } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
-  const menuItems = ["Home", "Shop", "About", "Contact"];
+  // Detect if current page is home
+  const isHome = location.pathname === "/home" || location.pathname === "/";
+
+  // Dynamic color based on page
+  const textColor = isHome ? "text-white" : "text-[#3373BA]";
+  const iconColor = isHome ? "text-white" : "text-[#3373BA]";
+  const hoverColor = "hover:text-[#F7DF52]";
 
   return (
-    <nav className="bg-[#3C75B5] text-white shadow-md sticky top-0 z-50">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 backdrop-blur-md ${
+        isHome ? "bg-transparent" : "bg-white/90 shadow-md"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-2xl font-extrabold tracking-wide text-[#F7DF52]">
-          <Link to="/home">Matcha Matters</Link>
+        <div className={`text-2xl font-extrabold tracking-wide ${hoverColor}`}>
+          <Link
+            to="/home"
+            className={isHome ? "text-[#F7DF52]" : "text-[#3373BA]"}
+          >
+            Macha Matters
+          </Link>
         </div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
-          <ul className="flex gap-8 text-lg font-medium">
-            {menuItems.map((item) => (
+          <ul className={`flex gap-8 text-lg font-medium ${textColor}`}>
+            {["Home", "Shop", "Contact"].map((item) => (
               <li key={item}>
                 <Link
                   to={`/${item === "Home" ? "home" : item.toLowerCase()}`}
-                  className="relative group"
+                  className={`relative group transition ${hoverColor}`}
                 >
                   {item}
                   <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-[#F7DF52] transition-all duration-300 group-hover:w-full"></span>
@@ -35,28 +51,31 @@ const Navbar = () => {
           <div className="flex items-center gap-5 ml-6">
             <Link
               to="/cart"
-              className="text-white hover:text-[#F7DF52] transition text-2xl"
+              className={`${iconColor} ${hoverColor} transition text-2xl`}
             >
               <FaShoppingCart />
             </Link>
-            <Link
+            {/* <Link
               to="/profile"
-              className="text-white hover:text-[#F7DF52] transition text-2xl"
+              className={`${iconColor} ${hoverColor} transition text-2xl`}
             >
               <FaUser />
-            </Link>
+            </Link> */}
           </div>
         </div>
 
         {/* Mobile Hamburger + Icons */}
         <div className="md:hidden flex items-center gap-4">
-          <Link to="/cart" className="text-white text-2xl">
+          <Link to="/cart" className={`${iconColor} text-2xl`}>
             <FaShoppingCart />
           </Link>
-          <Link to="/login" className="text-white text-2xl">
+          <Link to="/login" className={`${iconColor} text-2xl`}>
             <FaUser />
           </Link>
-          <button onClick={() => setIsOpen(!isOpen)}>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className={`${iconColor} transition`}
+          >
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
@@ -64,13 +83,19 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#3C75B5] px-6 py-4">
+        <div
+          className={`md:hidden ${
+            isHome ? "bg-[#3C75B5]/90" : "bg-white/90"
+          } backdrop-blur-md px-6 py-4 ${
+            isHome ? "text-white" : "text-[#2A6EEA]"
+          }`}
+        >
           <ul className="flex flex-col gap-4 text-lg font-medium">
-            {menuItems.map((item) => (
+            {["Home", "Shop", "Contact"].map((item) => (
               <li key={item}>
                 <Link
                   to={`/${item === "Home" ? "home" : item.toLowerCase()}`}
-                  className="block hover:text-[#F7DF52] transition"
+                  className={`block ${hoverColor} transition`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item}

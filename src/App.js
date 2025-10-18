@@ -14,6 +14,8 @@ import Profile from "./pages/profile";
 import Checkout from "./pages/Checkout";
 import OrderSuccess from "./pages/OrderSuccess";
 
+
+
 // ✅ Wrapper component to conditionally render Navbar/Footer
 function Layout() {
   const location = useLocation();

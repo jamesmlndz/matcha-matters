@@ -23,15 +23,16 @@ export default function Login() {
 
   return (
     <div className="min-h-screen font-poppins overflow-hidden">
-      {/* 🌿 Loading Screen */}
+      {/*Loading Screen */}
       <AnimatePresence>
         {loading && (
           <motion.div
             key="loading-screen"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             className="fixed inset-0 flex flex-col items-center justify-center bg-[#3373BA] z-50"
+           
           >
             {/* Glowing & Pulsing Logo */}
             <motion.img
@@ -41,13 +42,13 @@ export default function Login() {
               animate={{
                 opacity: [0, 1, 1, 1, 0.95],
                 scale: [0.9, 1.25, 1.1, 1.25],
+                
               }}
-              exit={{ scale: 0.6, opacity: 0 }} // 🌿 Shrink + fade out
               transition={{
-                duration: 1.5,
-                ease: "easeInOut",
-                repeat: loading ? Infinity : 0,
+                duration: 4,
+                repeat: Infinity,
                 repeatType: "mirror",
+                ease: "easeInOut",
               }}
               className="w-[28rem] h-auto drop-shadow-2xl"
             />
@@ -75,7 +76,7 @@ export default function Login() {
               }}
               className="mt-4 text-white font-medium tracking-wide text-lg"
             >
-              Preparing your matcha essentials...
+              Preparing your macha essentials...
             </motion.p>
           </motion.div>
         )}
@@ -89,21 +90,15 @@ export default function Login() {
         >
           {/* Left Image Section */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.6, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{
-              duration: 1.5, // matches the loading fade-out
-              ease: [0.25, 0.8, 0.25, 1],
-            }}
+            initial={{ x: -200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             className="hidden md:flex md:w-1/2 items-center justify-center"
           >
-            <motion.img
+            <img
               src="/assets/logo/MattersWhisk.png"
               alt="Matcha Matters"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-              className="w-[85%] h-auto object-contain drop-shadow-2xl rounded-2xl"
+              className="w-3/4 h-auto object-contain drop-shadow-2xl rounded-xl"
             />
           </motion.div>
 

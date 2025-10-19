@@ -3,7 +3,7 @@ const products = [
   {
     id: 1,
     name: "Jeju Matcha",
-    price: "₱750 – ₱1,200",
+    price: "₱750",
     category: "Powder",
     tagline: "Pure island-grown matcha from Jeju.",
     highlight: "Rich in antioxidants and sustainably grown.",
@@ -12,7 +12,7 @@ const products = [
   {
     id: 2,
     name: "Kyoto Matcha",
-    price: "₱950 – ₱1,500",
+    price: "₱1,500",
     category: "Powder",
     tagline: "Traditional matcha from Japan’s tea capital.",
     highlight: "Sourced from Uji, Kyoto — home of Japan’s best matcha.",
@@ -21,25 +21,17 @@ const products = [
   {
     id: 3,
     name: "Fukujuen Matcha",
-    price: "₱1,200 – ₱1,800",
+    price: "₱1,800",
     category: "Powder",
     tagline: "Over 200 years of Kyoto tea mastery.",
     highlight: "Over 200 years of tea-making expertise.",
     img: "/assets/products/Fukujuen.png",
   },
-  {
-    id: 3,
-    name: "Fukujuen Matcha",
-    price: "₱1,200 – ₱1,800",
-    category: "Powder",
-    tagline: "Over 200 years of Kyoto tea mastery.",
-    highlight: "Over 200 years of tea-making expertise.",
-    img: "/assets/products/Fukujuen.png",
-  },
+  
   {
     id: 4,
     name: "Yamasa Koyamaen Matcha",
-    price: "₱1,400 – ₱2,000",
+    price: "₱1,400",
     category: "Powder",
     tagline: "Award-winning Kyoto matcha excellence.",
     highlight: "High-grade matcha used in traditional Japanese tea schools.",
@@ -48,7 +40,7 @@ const products = [
   {
     id: 5,
     name: "Capi Matcha",
-    price: "₱650 – ₱900",
+    price: "₱900",
     category: "Powder",
     tagline: "Everyday wellness in every cup.",
     highlight: "Budget-friendly and versatile for everyday use.",
@@ -57,7 +49,7 @@ const products = [
   {
     id: 6,
     name: "Chamberlain Coffee Matcha",
-    price: "₱1,200 – ₱1,600",
+    price: "₱1,600",
     category: "Powder",
     tagline: "Fun, vibrant matcha for modern lifestyles.",
     highlight: "Sustainably sourced and USDA organic certified.",
@@ -66,7 +58,7 @@ const products = [
   {
     id: 7,
     name: "Wakatake Matcha",
-    price: "₱900 – ₱1,300",
+    price: "₱1,300",
     category: "Powder",
     tagline: "Fresh, vibrant energy from Japan.",
     highlight: "A balanced choice between quality and affordability.",
@@ -84,7 +76,7 @@ const products = [
   {
     id: 9,
     name: "Yamashiro Uji Matcha",
-    price: "₱1,100 – ₱1,700",
+    price: "₱1,700",
     category: "Powder",
     tagline: "Uji’s timeless matcha heritage.",
     highlight: "Traditional stone-ground matcha.",
@@ -93,7 +85,7 @@ const products = [
   {
     id: 10,
     name: "Encha Matcha",
-    price: "₱950 – ₱1,400",
+    price: "₱1,400",
     category: "Powder",
     tagline: "Farm-to-cup organic matcha.",
     highlight: "100% pure organic ceremonial matcha.",
@@ -102,7 +94,7 @@ const products = [
   {
     id: 11,
     name: "Hikari Matcha",
-    price: "₱800 – ₱1,200",
+    price: "₱1,200",
     category: "Powder",
     tagline: "Shining with freshness and flavor.",
     highlight: "Affordable and versatile for multiple uses.",
@@ -111,7 +103,7 @@ const products = [
   {
     id: 12,
     name: "Golde Pure Matcha",
-    price: "₱1,100 – ₱1,600",
+    price: "₱₱1,600",
     category: "Powder",
     tagline: "Glow from the inside out.",
     highlight: "Known for its Instagram-worthy packaging and high quality.",
@@ -120,7 +112,7 @@ const products = [
   {
     id: 13,
     name: "Isshiki Matcha",
-    price: "₱950 – ₱1,500",
+    price: "₱1,500",
     category: "Powder",
     tagline: "Heritage in every sip.",
     highlight: "Premium ceremonial-grade quality.",
@@ -129,7 +121,7 @@ const products = [
   {
     id: 14,
     name: "Matcha.com",
-    price: "₱1,200 – ₱1,900",
+    price: "₱1,900",
     category: "Powder",
     tagline: "Matcha made simple by Dr. Andrew Weil.",
     highlight: "Expertly sourced and stone-ground for maximum flavor.",
@@ -138,13 +130,67 @@ const products = [
   {
     id: 15,
     name: "Organic Uji Matcha",
-    price: "₱1,000 – ₱1,500",
+    price: "₱1,000",
     category: "Powder",
     tagline: "Pure, certified organic excellence.",
     highlight: "Certified organic, pesticide-free cultivation.",
     img: "/assets/products/Organic.png",
   },
-  // ... add all other products here
+  {
+    id: 16,
+    name: "Whisk",
+    price: "₱1,000",
+    category: "Accessories",
+    tagline: "",
+    highlight: "Certified organic, pesticide-free cultivation.",
+    img: "/assets/Kits/Whisk.png",
+  },
+  {
+    id: 17,
+    name: "Scoop",
+    price: "₱300",
+    category: "Accessories",
+    tagline: "",
+    highlight: "Certified organic, pesticide-free cultivation.",
+    img: "/assets/Kits/Scoop.png",
+  },
+  {
+    id: 18,
+    name: "Strain",
+    price: "₱500",
+    category: "Accessories",
+    tagline: "",
+    highlight: "Certified organic, pesticide-free cultivation.",
+    img: "/assets/Kits/Strain.png",
+  },
+  {
+    id: 19,
+    name: "Whisk Holder",
+    price: "₱500",
+    category: "Accessories",
+    tagline: "",
+    highlight: "Certified organic, pesticide-free cultivation.",
+    img: "/assets/Kits/Holder.png",
+  },
+  {
+    id: 20,
+    name: "Matcha Set 1",
+    price: "₱2000",
+    category: "Kit",
+    tagline: "Pure, certified organic excellence.",
+    highlight: "Certified organic, pesticide-free cultivation.",
+    img: "/assets/Kits/Package.png",
+  },
+  {
+    id: 21,
+    name: "Matcha Tool Set",
+    price: "₱2800",
+    category: "Kit",
+    tagline: "Consist of all your matcha tool basics",
+    highlight: "Certified organic, pesticide-free cultivation.",
+    img: "/assets/Kits/3.png",
+  },
+  
 ];
 
 export default products;

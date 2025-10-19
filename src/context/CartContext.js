@@ -1,4 +1,3 @@
-// src/context/CartContext.js
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
@@ -6,18 +5,18 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
-  // ✅ Load from localStorage when app starts
+  // Load from localStorage when app starts
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCartItems(storedCart);
   }, []);
 
-  // ✅ Sync changes to localStorage whenever cart updates
+  // Sync changes to localStorage whenever cart updates
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  // ✅ Add to cart
+  // Add to cart
   const addToCart = (item) => {
     setCartItems((prev) => {
       const exists = prev.find((p) => p.id === item.id);
@@ -26,18 +25,18 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  // ✅ Remove item
+  // Remove item
   const removeFromCart = (id) => {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
-  // ✅ Clear all
+  // Clear all
   const clearCart = () => setCartItems([]);
 
-  // ✅ Calculate total (extract numbers only)
+  // Calculate total price
   const total = cartItems.reduce((sum, item) => {
-    const match = item.price.match(/\d+/g); // extract numeric part from ₱750 – ₱1,200
-    const numericPrice = match ? parseInt(match[0]) : 0;
+    // Remove non-digit characters and parse as integer
+    const numericPrice = parseInt(item.price.replace(/[^\d]/g, ""), 10) || 0;
     return sum + numericPrice;
   }, 0);
 
@@ -50,5 +49,5 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-// ✅ Export hook
+// Hook to use cart context
 export const useCart = () => useContext(CartContext);

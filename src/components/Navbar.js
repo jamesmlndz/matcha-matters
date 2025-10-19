@@ -6,10 +6,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  // Detect if current page is home
   const isHome = location.pathname === "/home" || location.pathname === "/";
-
-  // Dynamic color based on page
   const textColor = isHome ? "text-white" : "text-[#3373BA]";
   const iconColor = isHome ? "text-white" : "text-[#3373BA]";
   const hoverColor = "hover:text-[#F7DF52]";
@@ -20,47 +17,53 @@ const Navbar = () => {
         isHome ? "bg-transparent" : "bg-white/90 shadow-md"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <div className={`text-2xl font-extrabold tracking-wide ${hoverColor}`}>
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between relative">
+        {/* Left Menu: Home & Contact */}
+        <ul className={`hidden md:flex gap-6 text-lg font-medium ${textColor}`}>
+          {["Home", "Contact"].map((item) => (
+            <li key={item}>
+              <Link
+                to={`/${item === "Home" ? "home" : item.toLowerCase()}`}
+                className={`relative group transition ${hoverColor}`}
+              >
+                {item}
+                <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-[#F7DF52] transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Center Logo */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 text-2xl font-extrabold tracking-wide">
           <Link
             to="/home"
-            className={isHome ? "text-[#F7DF52]" : "text-[#3373BA]"}
+            className={`transition ${isHome ? "text-[#F7DF52]" : "text-[#3373BA]"} ${hoverColor}`}
           >
             Matcha Matters
           </Link>
         </div>
 
-        {/* Desktop Menu */}
+        {/* Right Menu: Shop & Cart */}
         <div className="hidden md:flex items-center gap-6">
-          <ul className={`flex gap-8 text-lg font-medium ${textColor}`}>
-            {["Home", "Shop", "Contact"].map((item) => (
-              <li key={item}>
-                <Link
-                  to={`/${item === "Home" ? "home" : item.toLowerCase()}`}
-                  className={`relative group transition ${hoverColor}`}
-                >
-                  {item}
-                  <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-[#F7DF52] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
-            ))}
+          <ul className={`flex gap-6 text-lg font-medium ${textColor}`}>
+            <li>
+              <Link
+                to="/shop"
+                className={`relative group transition ${hoverColor}`}
+              >
+                Shop
+                <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-[#F7DF52] transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            </li>
           </ul>
 
-          {/* Icons */}
-          <div className="flex items-center gap-5 ml-6">
+          <div className="flex items-center gap-5">
             <Link
               to="/cart"
               className={`${iconColor} ${hoverColor} transition text-2xl`}
             >
               <FaShoppingCart />
             </Link>
-            {/* <Link
-              to="/profile"
-              className={`${iconColor} ${hoverColor} transition text-2xl`}
-            >
-              <FaUser />
-            </Link> */}
           </div>
         </div>
 
@@ -91,7 +94,7 @@ const Navbar = () => {
           }`}
         >
           <ul className="flex flex-col gap-4 text-lg font-medium">
-            {["Home", "Shop", "Contact"].map((item) => (
+            {["Home", "Contact", "Shop"].map((item) => (
               <li key={item}>
                 <Link
                   to={`/${item === "Home" ? "home" : item.toLowerCase()}`}

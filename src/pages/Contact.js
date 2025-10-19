@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
@@ -8,7 +9,7 @@ export default function Contact() {
     message: "",
   });
 
-  const [status, setStatus] = useState(""); // For success/error feedback
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,7 +18,6 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Replace with your EmailJS credentials
     emailjs
       .send(
         "YOUR_SERVICE_ID",
@@ -42,60 +42,71 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-16 bg-gray-50 px-6">
-      <h2 className="text-3xl font-bold text-center text-secondary mb-8">
-        Contact Us
-      </h2>
-
-      <form
-        onSubmit={handleSubmit}
-        className="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow space-y-6"
+    <section className="pt-40 pb-20 bg-gray-50 px-6 md:px-12">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="max-w-3xl mx-auto text-center"
       >
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-primary"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-primary"
-        />
-        <textarea
-          name="message"
-          rows="5"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-primary"
-        ></textarea>
+        <h2 className="text-4xl font-bold text-secondary mb-8">
+          Contact Us
+        </h2>
 
-        <button
-          type="submit"
-          className="w-full px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-primary hover:text-secondary transition"
+        <p className="text-gray-600 mb-12 text-lg">
+          Have questions or feedback? We’d love to hear from you!
+        </p>
+
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white p-8 rounded-2xl shadow-lg space-y-6"
         >
-          Send Message
-        </button>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+          ></textarea>
 
-        {status && (
-          <p
-            className={`text-center font-medium ${
-              status.includes("✅") ? "text-green-600" : "text-red-500"
-            }`}
+          <button
+            type="submit"
+            className="w-full px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-primary hover:text-secondary transition"
           >
-            {status}
-          </p>
-        )}
-      </form>
+            Send Message
+          </button>
+
+          {status && (
+            <p
+              className={`text-center font-medium ${
+                status.includes("✅") ? "text-green-600" : "text-red-500"
+              }`}
+            >
+              {status}
+            </p>
+          )}
+        </form>
+      </motion.div>
     </section>
   );
 }

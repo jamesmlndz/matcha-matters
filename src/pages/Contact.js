@@ -31,7 +31,7 @@ export default function Contact() {
       )
       .then(
         () => {
-          setStatus("✅ Message sent successfully!");
+          setStatus("Message sent successfully!");
           setFormData({ name: "", email: "", message: "" });
         },
         (error) => {

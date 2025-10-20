@@ -57,7 +57,7 @@ const Cart = () => {
     );
   }
 
-  // 🛍️ When cart has items
+  //  When cart has items
   return (
     <div className="pt-40 pb-24 px-6 bg-[#FAFAF8] min-h-screen">
       <div className="max-w-5xl mx-auto bg-white p-8 rounded-2xl shadow-lg">

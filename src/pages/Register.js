@@ -24,7 +24,7 @@ export default function Register() {
       className="min-h-screen flex items-center justify-center font-poppins overflow-hidden"
       style={{ backgroundColor: "#3373BA" }}
     >
-      {/* ✨ Animated Form Container */}
+      {/*Form Container */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}

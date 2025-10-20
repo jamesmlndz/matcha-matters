@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function Home() {
   return (
     <div className="font-poppins">
-      {/* 🌿 HERO SECTION WITH VIDEO */}
+      {/*HERO  SECTION WITHVIDEO */}
       <motion.section
         className="relative py-40 text-center text-white overflow-hidden"
         initial={{ opacity: 0 }}
@@ -48,7 +48,7 @@ export default function Home() {
         </motion.div>
       </motion.section>
 
-      {/* 🌱 WHY MATCHA SECTION (smooth fade in) */}
+      {/*WHY MATCHA SECTION */}
       <motion.section
         className="py-20 bg-white"
         initial={{ opacity: 0 }}
@@ -72,7 +72,7 @@ export default function Home() {
             />
           </motion.div>
 
-          {/* Right Side - Text */}
+          {/* Right Side  */}
           <motion.div
             className="md:w-1/2 text-center md:text-left"
             initial={{ x: 100, opacity: 0 }}
@@ -126,7 +126,7 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-          {/* LEFT COLUMN (2 stacked images) */}
+          {/* LEFT COLUMN */}
           <motion.div
             className="flex flex-col gap-6"
             initial={{ x: -100, opacity: 0 }}
@@ -168,7 +168,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* 🍵 Shop by Category */}
+      {/* Shop by Category */}
       <motion.section
         className="py-40 bg-cover bg-center relative"
         style={{ backgroundImage: "url('/assets/backgrounds/MatchaBg.jpg')" }}
@@ -223,7 +223,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* 🧋 About / Brand Section */}
+      {/* About / Brand Section */}
       <motion.section
         className="bg-white py-20 px-6 md:px-12"
         initial={{ opacity: 0 }}
@@ -284,7 +284,7 @@ export default function Home() {
       </motion.section>
 
 
-      {/* 🌿 Featured Products */}
+      {/*Featured Products */}
       <section className="py-20 bg-white">
         <div className="flex justify-between items-center max-w-6xl mx-auto px-6 mb-12">
           <h2 className="text-4xl font-bold text-secondary">
@@ -342,225 +342,389 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 🎁 Something for You */}
-      <section className="py-20 bg-white text-center">
-        <h2 className="text-4xl font-bold text-[#3373BA] mb-16">
-          Something for You
-        </h2>
-
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-center justify-center px-6">
-          {[
-            "/assets/icons/yellow.png",
-            "/assets/products/Jeju.png",
-            "/assets/icons/red.png",
-            "/assets/products/Kyoto.png",
-            "/assets/products/Fukujuen.png",
-            "/assets/icons/green.png",
-            "/assets/products/Isshiki.png",
-            "/assets/icons/blue.png",
-          ].map((src, i) => (
-            <div key={i} className="flex justify-center items-center relative">
-              <img
-                src={src}
-                alt={`Something ${i}`}
-                className="w-40 h-40 md:w-48 md:h-48 object-contain drop-shadow-lg"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
-     
-      {/* 🏆 Best Sellers */}
-      <section
-        className="py-40 bg-cover bg-center relative"
-        style={{ backgroundImage: "url('/assets/products/BestSeller.png')" }}
+    {/* Something for You */}
+    <section className="py-20 bg-white text-center overflow-hidden">
+      <motion.h2
+        className="text-4xl font-bold text-[#3373BA] mb-16"
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
       >
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="relative z-10">
-          <div className="flex justify-between items-center max-w-7xl mx-auto px-6 mb-12">
-            <h2 className="text-4xl font-bold text-white">Best Sellers</h2>
-            <Link
-              to="/shop"
-              className="text-[#F7DF52] font-semibold hover:underline"
-            >
-              View More
-            </Link>
-          </div>
+        Something for You
+      </motion.h2>
 
-          <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto px-6">
-            {[
-              {
-                name: "Ceremonial Matcha",
-                img: "/assets/products/Chameberlain.png",
-              },
-              {
-                name: "Matcha Starter Kit",
-                img: "/assets/logo/MatchaAcc.png",
-              },
-              {
-                name: "Bamboo Whisk",
-                img: "/assets/Kits/Whisk.png",
-              },
-              {
-                name: "Iced Matcha Blend",
-                img: "/assets/icons/matcha-glass.png",
-              },
-            ].map((prod, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center border border-gray-100"
-              >
-                <img
-                  src={prod.img}
-                  alt={prod.name}
-                  className="w-full h-48 object-cover rounded-md mb-4"
-                />
-                <h3 className="text-lg font-semibold text-secondary">
-                  {prod.name}
-                </h3>
-                <p className="text-accent mt-2">{prod.price}</p>
-                
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 🍵 Matcha Latte Highlight Section */}
-      <section className="relative flex flex-col md:flex-row items-center justify-center bg-white py-20 px-8 overflow-hidden">
-        {/* Yellow Rounded Box */}
-        <div className="relative bg-[#F7DF52] rounded-3xl border-4 border-black p-10 md:p-14 max-w-4xl shadow-xl flex flex-col md:flex-row items-center gap-8 z-10">
-          
-          {/* Matcha Glass Image (Left) */}
-          <div className="flex-shrink-0">
-            <img
-              src="/assets/icons/matcha-glass.png"
-              alt="Matcha Latte"
-              className="w-56 h-56 md:w-64 md:h-64 rounded-2xl object-cover"
+      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-center justify-center px-6 relative">
+        {[
+          "/assets/icons/yellow.png",
+          "/assets/products/Jeju.png",
+          "/assets/icons/red.png",
+          "/assets/products/Kyoto.png",
+          "/assets/products/Fukujuen.png",
+          "/assets/icons/green.png",
+          "/assets/products/Isshiki.png",
+          "/assets/icons/blue.png",
+        ].map((src, i) => (
+          <motion.div
+            key={i}
+            className="flex justify-center items-center relative"
+            initial={{ opacity: 0, scale: 0.2, x: 0, y: 0 }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+              x: 0,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.8,
+              delay: i * 0.15,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
+          >
+            <motion.img
+              src={src}
+              alt={`Something ${i}`}
+              className="w-40 h-40 md:w-48 md:h-48 object-contain drop-shadow-lg"
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: i * 0.15,
+                type: "spring",
+                stiffness: 100,
+              }}
+              viewport={{ once: true }}
             />
-          </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
 
-          {/* Text Content (Right) */}
-          <div className="flex flex-col text-left max-w-lg">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#245A2D] mb-3">
-              Matcha Latte
-            </h2>
-            <p className="text-lg md:text-2xl text-black leading-relaxed">
-              Experience the smooth blend of premium Japanese matcha and creamy milk —
-              the perfect way to energize your day.
-            </p>
-          </div>
-        </div>
-
-        {/* Blue Circle + Hand Image */}
-        <div className="relative mt-16 md:mt-0 md:ml-[-80px] flex items-center justify-center">
-          {/* Japanese Text */}
-          <h3 className="absolute text-5xl md:text-6xl font-bold text-[#D64541] top-[-3rem] md:top-[-4rem]">
-            オツミルク
-          </h3>
-
-          {/* Blue Circle */}
-          <div className="w-64 h-64 bg-[#2967B0] rounded-full relative z-0"></div>
-
-          {/* Hand Image */}
-          <img
-            src="/assets/icons/whiskingmmatcha.png"
-            alt="Whisking Matcha"
-            className="absolute w-72 h-72 object-contain z-10 right-0 bottom-0"
-          />
-        </div>
-      </section>
-
-
-      <section className="bg-[#F7DF52] py-20 px-6 md:px-20">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-16">
-        {/* LEFT: Product Images */}
-        <div className="flex gap-6 md:gap-8">
-          <div className="flex flex-col gap-6">
-            <img
-              src="/assets/Kits/Whisk.png"
-              alt="Matcha Whisk"
-              className="w-36 md:w-44 object-contain drop-shadow-lg"
-            />
-            <img
-              src="/assets/Kits/Strain.png"
-              alt="Matcha Strainer"
-              className="w-36 md:w-44 object-contain drop-shadow-lg"
-            />
-          </div>
-          <div className="flex flex-col gap-6">
-            <img
-              src="/assets/Kits/Package.png"
-              alt="Matcha Starter Package"
-              className="w-36 md:w-44 object-contain drop-shadow-lg"
-            />
-            <img
-              src="/assets/Kits/Scoop.png"
-              alt="Matcha Scoop"
-              className="w-36 md:w-44 object-contain drop-shadow-lg"
-            />
-          </div>
-        </div>
-
-        {/* RIGHT: Text + Button */}
-        <div className="text-center md:text-left max-w-sm">
-          <h2 className="text-4xl font-extrabold text-[#2A6EEA] mb-3 tracking-tight">
-            Starter Kits
-          </h2>
-          <p className="text-gray-800 text-lg leading-relaxed mb-8">
-            Our curated starter kits are perfect for beginners and matcha lovers.
-            Each set includes premium tools handpicked from authentic matcha
-            makers around the world.
-          </p>
-
+        
+          {/* Best Sellers */}
+    <section
+      className="py-40 bg-cover bg-center relative overflow-hidden"
+      style={{ backgroundImage: "url('/assets/products/BestSeller.png')" }}
+    >
+      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="relative z-10">
+        {/* Title + View More */}
+        <motion.div
+          className="flex justify-between items-center max-w-7xl mx-auto px-6 mb-12"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl font-bold text-white">Best Sellers</h2>
           <Link
             to="/shop"
-            className="bg-[#2A6EEA] text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-[#1F56B3] transition-all duration-300"
+            className="text-[#F7DF52] font-semibold hover:underline"
           >
-            Shop 
+            View More
           </Link>
+        </motion.div>
+
+        {/* Product Cards */}
+        <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto px-6">
+          {[
+            {
+              name: "Ceremonial Matcha",
+              img: "/assets/products/Chameberlain.png",
+            },
+            {
+              name: "Matcha Starter Kit",
+              img: "/assets/logo/MatchaAcc.png",
+            },
+            {
+              name: "Bamboo Whisk",
+              img: "/assets/Kits/Whisk.png",
+            },
+            {
+              name: "Iced Matcha Blend",
+              img: "/assets/icons/matcha-glass.png",
+            },
+          ].map((prod, i) => (
+            <motion.div
+              key={i}
+              className="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center border border-gray-100"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: i * 0.2,
+                ease: "easeOut",
+              }}
+              viewport={{ once: true }}
+            >
+              <motion.img
+                src={prod.img}
+                alt={prod.name}
+                className="w-full h-48 object-cover rounded-md mb-4"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 200 }}
+              />
+              <h3 className="text-lg font-semibold text-secondary">
+                {prod.name}
+              </h3>
+              <p className="text-accent mt-2">{prod.price}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
 
+    {/* Matcha Latte Highlight Section */}
+    <section className="relative flex flex-col md:flex-row items-center justify-center bg-white py-20 px-8 overflow-hidden">
+
+      
+      {/* Yellow Rounded Box */}
+      <motion.div
+        className="relative bg-[#F7DF52] rounded-3xl p-10 md:p-14 max-w-4xl shadow-[0_8px_30px_rgba(0,0,0,0.15)] flex flex-col md:flex-row items-center gap-8 z-10"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+
+          {/* Japanese Text */}
+          <motion.h3
+          className="absolute text-5xl md:text-6xl font-bold text-[#D64541] top-[-3rem] md:top-[-4rem] tracking-widest"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          viewport={{ once: true }}
+        >
+          オツミルク
+        </motion.h3>
+
+        {/* Matcha Glass Image (Left) */}
+        <motion.div
+          className="flex-shrink-0"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <img
+            src="/assets/icons/matcha-glass.png"
+            alt="Matcha Latte"
+            className="w-56 h-56 md:w-64 md:h-64 rounded-2xl object-cover drop-shadow-lg hover:scale-105 transition-transform duration-300"
+          />
+        </motion.div>
+
+        {/* Text Content (Right) */}
+        <motion.div
+          className="flex flex-col text-left max-w-lg"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-[#245A2D] mb-3">
+            Matcha Latte
+          </h2>
+          <p className="text-lg md:text-2xl text-black leading-relaxed">
+            Experience the smooth blend of premium Japanese matcha and creamy milk —
+            the perfect way to energize your day.
+          </p>
+        </motion.div>
+      </motion.div>
+
+      {/* Blue Circle + Hand Image */}
+      <motion.div
+        className="relative mt-16 md:mt-0 md:ml-[-80px] flex items-center justify-center"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+
+        {/* Blue Circle */}
+        <div className="w-64 h-64 bg-[#2967B0] rounded-full relative z-0 shadow-[0_8px_30px_rgba(41,103,176,0.3)]"></div>
+
+        {/* Hand Image */}
+        <motion.img
+          src="/assets/icons/whiskingmmatcha.png"
+          alt="Whisking Matcha"
+          className="absolute w-72 h-72 object-contain z-10 right-0 bottom-0"
+          initial={{ opacity: 0, rotate: -10 }}
+          whileInView={{ opacity: 1, rotate: 0 }}
+          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        />
+      </motion.div>
+    </section>
+
+
+    <section className="relative bg-[#F7DF52] py-28 px-10 md:px-24 overflow-hidden">
+  <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-20">
+    {/* LEFT: Product Images */}
+    <div className="flex gap-8 md:gap-12">
+      <div className="flex flex-col gap-8">
+        <img
+          src="/assets/Kits/Whisk.png"
+          alt="Matcha Whisk"
+          className="w-44 md:w-56 object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+        />
+        <img
+          src="/assets/Kits/Strain.png"
+          alt="Matcha Strainer"
+          className="w-44 md:w-56 object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="flex flex-col gap-8">
+        <img
+          src="/assets/Kits/Package.png"
+          alt="Matcha Starter Package"
+          className="w-44 md:w-56 object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+        />
+        <img
+          src="/assets/Kits/Scoop.png"
+          alt="Matcha Scoop"
+          className="w-44 md:w-56 object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+    </div>
+
+    {/* RIGHT: Text + Button */}
+    <div className="text-center md:text-left max-w-md md:max-w-lg">
+      <h2 className="text-5xl md:text-6xl font-extrabold text-[#3373BA] mb-5 tracking-tight drop-shadow-sm">
+        Starter Kits
+      </h2>
+      <p className="text-[#245A2D] text-xl leading-relaxed mb-10">
+        Our curated starter kits are perfect for both beginners and matcha lovers.
+        Each set includes premium tools handpicked from authentic matcha artisans
+        — everything you need to start your matcha ritual right at home.
+      </p>
+
+      <Link
+        to="/shop"
+        className="inline-block bg-[#3373BA] text-white px-10 py-4 rounded-full font-semibold text-lg shadow-lg hover:bg-[#1F56B3] hover:shadow-xl transition-all duration-300"
+      >
+        Shop Now
+      </Link>
+    </div>
+  </div>
+
+  {/* Decorative Circle */}
+  <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#FFE866] rounded-full blur-3xl opacity-50"></div>
+</section>
 
 
 
-      {/* 💬 Testimonials */}
-      <section className="py-20 bg-white">
-        <h2 className="text-4xl font-bold text-center text-secondary mb-12">
-          What Our Customers Say
-        </h2>
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6 ">
-          {[
-            {
-              name: "Samantha",
-              text: "The matcha is so smooth and fresh! I can feel the energy boost without the crash.",
-            },
-            {
-              name: "David",
-              text: "Beautiful packaging and amazing flavor. Matcha Matters is my go-to shop.",
-            },
-            {
-              name: "Lina",
-              text: "I love their starter kits! Everything I needed to begin my matcha journey.",
-            },
-          ].map((review, i) => (
-            <div
-              key={i}
-              className="bg-white p-8 rounded-xl shadow hover:shadow-lg transition text-center"
-            >
-              <p className="italic text-gray-600 mb-6">“{review.text}”</p>
-              <h4 className="font-semibold text-secondary">{review.name}</h4>
-            </div>
-          ))}
+
+
+{/* Testimonials */}
+<section className="relative py-28 bg-white overflow-hidden">
+  {/* Title */}
+  <h2 className="text-5xl md:text-6xl font-extrabold text-center text-[#F7DF52] mb-16 tracking-tight">
+  ⋆˚꩜｡What Our Customers Say
+  ⭑.ᐟ
+  </h2>
+
+  {/* Testimonials Grid */}
+  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-8 md:px-12 relative z-10">
+    {[
+      {
+        name: "Samantha",
+        text: "The matcha is so smooth and fresh! I can feel the energy boost without the crash.",
+      },
+      {
+        name: "David",
+        text: "Beautiful packaging and amazing flavor. Matcha Matters is my go-to shop.",
+      },
+      {
+        name: "Lina",
+        text: "I love their starter kits! Everything I needed to begin my matcha journey.",
+      },
+    ].map((review, i) => (
+      <div
+        key={i}
+        className="bg-white p-10 rounded-3xl shadow-lg border border-[#F1F1F1] text-center hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
+      >
+        <p className="italic text-gray-700 text-lg mb-6 leading-relaxed">
+          “{review.text}”
+        </p>
+        <h4 className="font-bold text-[#3373BA] text-xl">{review.name}</h4>
+        <div className="mt-2 flex justify-center">
+          <span className="w-16 h-1 bg-[#F7DF52] rounded-full"></span>
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+
+  {/* Decorative Floating Quotes */}
+
+</section>
+
+
+{/* Frequently Asked Questions */}
+<section className="py-28 bg-white">
+  <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between gap-16 px-6 md:px-12">
+    
+    {/* Left Side - Title */}
+    <div className="md:w-1/2">
+      <h2 className="text-5xl md:text-6xl font-extrabold text-[#3373BA] mb-6 tracking-tight">
+        Frequently Asked Questions ᯓ★
+      </h2>
+      <p className="text-[#3373BA] text-lg leading-relaxed max-w-md">
+        Got questions about our matcha, shipping, or starter kits?  
+        We’ve got all the answers right here.
+      </p>
+    </div>
+
+    {/* Right Side - FAQ List */}
+    <div className="md:w-1/2 space-y-6">
+      {[
+        {
+          question: "What makes Matcha Matters products different?",
+          answer:
+            "We source our matcha directly from trusted Japanese farms, ensuring every product delivers authentic flavor, vibrant color, and maximum health benefits.",
+        },
+        {
+          question: "How should I store my matcha?",
+          answer:
+            "Keep your matcha in an airtight container in a cool, dry place. For the best freshness, refrigerate it after opening and use within 60 days.",
+        },
+        {
+          question: "Do you offer international shipping?",
+          answer:
+            "Yes! We proudly ship worldwide. Shipping rates and delivery times may vary depending on your location.",
+        },
+        {
+          question: "What’s included in the Starter Kit?",
+          answer:
+            "Our Starter Kit includes premium Japanese matcha, a bamboo whisk (chasen), a scoop (chashaku), and a strainer — everything you need for a perfect matcha session.",
+        },
+      ].map((faq, i) => (
+        <details
+          key={i}
+          className="group bg-white rounded-xl border border-gray-200 shadow-sm transition-all duration-300 open:shadow-md"
+        >
+          <summary className="cursor-pointer flex justify-between items-center p-6 text-left list-none">
+            <h3 className="text-xl font-semibold text-[#3373BA]">
+              {faq.question}
+            </h3>
+            <span className="text-[#F7DF52] text-3xl transition-transform duration-300 group-open:rotate-45">
+              +
+            </span>
+          </summary>
+          <p className="px-6 pb-6 text-gray-700 text-base leading-relaxed">
+            {faq.answer}
+          </p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+
 
             
 
-      {/* ✉️ Newsletter */}
+      {/*Newsletter */}
       <section className="py-20 bg-secondary text-white text-center">
         <h2 className="text-4xl font-bold mb-6">Stay Connected</h2>
         <p className="mb-8 text-lg">

@@ -82,7 +82,7 @@ export default function Login() {
         )}
       </AnimatePresence>
 
-      {/* 🌿 Main Login Page */}
+      {/* Main Login Page */}
       {!loading && (
         <div
           className="min-h-screen flex flex-col md:flex-row overflow-hidden"

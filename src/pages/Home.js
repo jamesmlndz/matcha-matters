@@ -696,7 +696,7 @@ export default function Home() {
         {
           question: "What’s included in the Starter Kit?",
           answer:
-            "Our Starter Kit includes premium Japanese matcha, a bamboo whisk (chasen), a scoop (chashaku), and a strainer — everything you need for a perfect matcha session.",
+            "Our Starter Kit includes premium Japanese matcha, a bamboo whisk (chasen), a scoop (chashaku), and a strainer everything you need for a perfect matcha session.",
         },
       ].map((faq, i) => (
         <details
